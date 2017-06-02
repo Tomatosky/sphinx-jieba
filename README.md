@@ -3,8 +3,6 @@ Sphinx for Chinese with cppJieba
 
 仿照[Sphinx for Chinese](https://github.com/eric1688/sphinx.git)，基于sphinx 2.2.9版本，结合cppJieba分词系统，让sphinx支持中文。
 
-在 https://github.com/frankee/sphinx-jieba 基础上解决了编译不通过问题
-
 ## 安装
 ### 解压
 
