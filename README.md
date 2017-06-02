@@ -3,19 +3,21 @@ Sphinx for Chinese with cppJieba
 
 仿照[Sphinx for Chinese](https://github.com/eric1688/sphinx.git)，基于sphinx 2.2.9版本，结合cppJieba分词系统，让sphinx支持中文。
 
+在 https://github.com/frankee/sphinx-jieba 基础上解决了编译不通过问题
 
 ## 安装
 ### 解压
 
 ```
-$ git clone https://github.com/eric1688/sphinx
-$ cd sphinx
+$ git clone https://github.com/c4ys/sphinx-jieba
+$ cd sphinx-jieba
+$ git submodule update --init --recursive
 ```
 
 ### 编译（假设安装到/usr/local/sphinx目录，下文同）
 
 ```
-$ ./configure --prefix=/usr/local/sphinx
+$ ./configure --prefix=/usr/local/sphinx-jieba
 --prefix 指定安装路径
 --with-mysql 编译mysql支持
 --with-pgsql 编译pgsql支持
