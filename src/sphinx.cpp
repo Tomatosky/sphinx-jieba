@@ -13,7 +13,7 @@
 // did not, you can find it at http://www.gnu.org/
 //
 
-#include "cppjieba/jieba.hpp"
+#include "cppjieba/Jieba.hpp"
 #include "sphinx.h"
 #include "sphinxstem.h"
 #include "sphinxquery.h"
