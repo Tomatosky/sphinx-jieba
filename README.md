@@ -15,6 +15,8 @@ $ git submodule update --init --recursive
 ### 编译（假设安装到/usr/local/sphinx目录，下文同）
 
 ```
+$ sudo apt install gcc cmake automake
+$ sudo apt install libmysqld-dev
 $ ./configure --prefix=/usr/local/sphinx-jieba
 --prefix 指定安装路径
 --with-mysql 编译mysql支持
