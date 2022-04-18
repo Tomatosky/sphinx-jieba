@@ -9,7 +9,8 @@ RUN git clone https://github.com/Tomatosky/sphinx-jieba \
     && \cp -r cppjieba/include/cppjieba src/  \
     && \cp -r cppjieba/deps/limonp src/  \
     && make && make install \
-    && \cp -r cppjieba/dict/* /usr/local/sphinx-jieba/etc/  \
+
+RUN \cp -r cppjieba/dict/* /usr/local/sphinx-jieba/etc/  \
     && cd /usr/local/sphinx-jieba/ \
     && \cp etc/jieba.dict.utf8 etc/xdict/jieba.dict.utf8 \
     && \cp etc/user.dict.utf8 etc/xdict/user.dict.utf8 \
