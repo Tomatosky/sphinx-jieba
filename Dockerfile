@@ -8,7 +8,7 @@ RUN git clone https://github.com/Tomatosky/sphinx-jieba \
     && ./configure --prefix=/usr/local/sphinx-jieba \
     && \cp -r cppjieba/include/cppjieba src/  \
     && \cp -r cppjieba/deps/limonp src/  \
-    && make && make install \
+    && make install \
 
 RUN \cp -r cppjieba/dict/* /usr/local/sphinx-jieba/etc/  \
     && cd /usr/local/sphinx-jieba/ \
