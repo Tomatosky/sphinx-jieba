@@ -1,6 +1,7 @@
-FROM centos:7.6.1810
+FROM ubuntu:16.04
 
-RUN yum -y install git gcc cmake automake g++ mysql-devel
+RUN apt-get -y update
+RUN apt-get -y install gcc cmake automake g++ libmysqld-dev git
 
 RUN git clone https://github.com/Tomatosky/sphinx-jieba \
     && cd sphinx-jieba \
@@ -10,15 +11,11 @@ RUN git clone https://github.com/Tomatosky/sphinx-jieba \
     && \cp -r cppjieba/deps/limonp src/  \
     && make install
 
-RUN \cp -r cppjieba/dict/* /usr/local/sphinx-jieba/etc/  \
-    && cd /usr/local/sphinx-jieba/ \
-    && \cp etc/jieba.dict.utf8 etc/xdict/jieba.dict.utf8 \
-    && \cp etc/user.dict.utf8 etc/xdict/user.dict.utf8 \
-    && \cp etc/hmm_model.utf8 etc/xdict/hmm_model.utf8 \
-    && \cp etc/idf.utf8 etc/xdict/idf.utf8 \
-    && \cp etc/stop_words.utf8 etc/xdict/stop_words.utf8
+WORKDIR /usr/local/sphinx-jieba/xdict/
+RUN \cp -r /sphinx-jieba/cppjieba/dict/* ./
 
 WORKDIR /
 EXPOSE 9312
 ADD ./entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
