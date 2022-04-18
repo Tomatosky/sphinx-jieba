@@ -14,6 +14,8 @@ RUN git clone https://github.com/Tomatosky/sphinx-jieba \
 WORKDIR /usr/local/sphinx-jieba/xdict/
 RUN \cp -r /sphinx-jieba/cppjieba/dict/* ./
 
+WORKDIR /usr/local/sphinx-jieba/log
+WORKDIR /usr/local/sphinx-jieba/data
 WORKDIR /
 EXPOSE 9312
 ADD ./entrypoint.sh /
